@@ -1,0 +1,212 @@
+% TODO: vertically center the left minipage
+\documentclass[a4paper]{article}
+
+%\usepackage{extsizes}
+\usepackage{titlesec}  % reformatting titles
+\usepackage{titling}  % customize maketitle
+\usepackage{indentfirst}  % indent first word of every paragraph
+\usepackage[none]{hyphenat}  % prevent hyphenation in the entire document by setting the hyphenation languages to none
+\usepackage[margin=1.25in]{geometry}
+
+\pagenumbering{gobble}  % no page numbering
+
+\renewcommand{\maketitle}{
+	\begin{center}
+		{\Huge\bfseries{\theauthor}}\\
+		\vspace{0.5em}
+		{\large Email: arsanysamuel.as@gmail.com \\ Phone number: +20-106-887-4670}
+	\end{center}
+}
+
+
+\titleformat{\section}   % reformat title (titlesec)
+	{\huge\bfseries}  % formatting
+	{}  % numbering, default: \thesection
+	{0em}  % space before the title
+	{}  % text before title
+	[\titlerule]  % followed by (optional)
+
+\titleformat{\subsection}
+	{\Large\bfseries}
+	{\hspace{-0.5em}$\bullet$}
+	{0em}
+	{\hspace{0.25em}}
+
+\titleformat{\subsubsection}
+	[runin]  % run the title with the paragraph in the same line (optional)
+	{\bfseries}
+	{}
+	{0em}
+	{}
+	[:]
+
+\titlespacing{\subsubsection}  % modify title spacint (titlesec)
+	{0em}  % right spacing
+	{0.25em}  % vertical spacing
+	{1em}  % left spacing
+
+% Pure laziness:
+\newcommand{\ag}{Agricultural Engineering}
+\newcommand{\aed}{Agricultural Engineering Department}
+\newcommand{\foa}{Faculty of Agriculture}
+\newcommand{\au}{Alexandria University}
+
+
+\newcommand{\entry}[4]{   % new command takes 4 args, will improve with xargs package to take optional arguments later
+	\begin{center}
+		\begin{minipage}[c]{0.25\linewidth}  % [t] is optional positioning argument, try h,b,t,p , using text width as it's a constant width
+			\vfill
+			\hfill  % align to the right
+			\textsc{#1}  % small caps word, # for the argument number
+			\vfill
+		\end{minipage}
+		\hfill\vline\hfill  % vertical line in the center
+		\begin{minipage}[c]{0.7\linewidth}
+			\textrm{``#2''} \\
+			\textit{#3} \\
+			\footnotesize{#4}
+		\end{minipage}
+	\end{center}
+	%\vspace{0.5em} 
+}
+
+\newcommand{\smallentry}[2]{   % new command takes 2 args
+	\begin{center}
+		\begin{minipage}[c]{0.25\linewidth}  % [t] is optional positioning argument, try h,b,t,p , using text width as it's a constant width
+			\vfill
+			\hfill  % align to the right
+			\textsc{#1}  % small caps word, # for the argument number
+			\vfill
+		\end{minipage}
+		\hfill\vline\hfill  % line in the center
+		\begin{minipage}[c]{0.7\linewidth}
+			\vfill
+			\textrm{#2} 
+			\vfill
+		\end{minipage}
+	\end{center}
+	\vspace{0.5em} 
+}
+
+\title{R\'esum\'e}
+\author{Arsany Samuel}
+
+\begin{document}
+	\maketitle
+	
+	\section{Summary}
+		%Recent graduate Agricultural Engineering student. Self-learner with vast experience in electronics, mechanical design, programming and software. Adaptable and eager to learn new technologies and methods for both self-investment and career elevation.
+		Experienced Agricultural Engineer with vast experience in electronics, programming, software, mechanical and electrical design, manufacturing methods and techniques. Seeking self-improvement and career elevation.
+
+
+	\section{Education}
+		\entry{2016-2021}
+			{B.S.E. in \ag}
+			{\foa, \au }
+			{Participated in several research projects and publications.\\Graduation Project: Solar Powered Robotic Arm to Identify and Collect \\Agricultural Products}
+
+
+	\section{Experience}
+		\entry{2021-present}
+			{Technical/Site Mechatronics Engineer}
+			{Specialist Company for Engineering Solutions.}
+			{Programming machine vision applications, graphical user interfaces, database integration, network and serial communication.\\Mechanical, electronic circuits and board design.\\Preforming and supervising installations and maintenance of solar heaters on site.}
+		\entry{2019-2021}
+			{Co-Founder}
+			{Sibotics.}
+			{Co-Founded IOT and electronic design services startup company.}
+		\entry{2019-2020}
+			{ROV Pilot, Electrical/Mechanical/Software Team Member.}
+			{Vortex Robotics.}
+			{Participated in several underwater robotics competitions with two academic teams.\\Electrical/Mechanical member and ROV pilot in 2019.\\Software team member in 2020.}
+		\entry{2018-present}  % don't add a blank line after entry
+			{Co-Founder}
+			{Comet.}
+			{Co-Founded startup company providing electronic, mechanical and software solutions including design and fabrication services and project implementation, also competing in the market with innovative industrial solutions and products.}
+
+	\pagebreak  % don't know if this is necessary
+
+	\section{Skills}
+		\subsection{Software}
+			\subsubsection{Programming Languages}
+			C/C++, Python, Shell/Bash scripting, {\LaTeX}, HTML/CSS, \\Markdown, SQL, Lua.
+			\subsubsection{CAD Modeling}	
+			SolidWorks, Sketchup, AutoCAD.
+			\subsubsection{Electronics}	
+			EagleCAD, KiCAD, Proteus, NI Multisim.
+			\subsubsection{Others}
+			Linux, Git, Command Line tools, Nginx, Networking tools and configuration, \\Remote Access tools, Pandoc, Office Suites, GIMP.
+		\subsection{Hardware}
+			\subsubsection{Electrical}
+			Electrical and electronic circuits, microcontroller programming, SBCs, PCB fabrication, electrical installations.
+			\subsubsection{Mechanical}
+			Material selection, machining and fabrication processes, machine assembly, pneumatic and hydraulic circuits, sealing techniques.
+
+		\subsection{Languages}
+			Arabic(Mother Tongue), English (Proficient).
+
+
+	\section{Projects}
+		\smallentry{Battery Tester}
+			{Commercial ready battery life tester for solar systems, cars and other applications acid and dry batteries.}
+		\smallentry{\footnotesize{Irrigation Controller}}
+			{Project Funded by the Ministry of Higher Education, a microprocessor and microcontroller based irrigation controller unit, using state-of-art irrigation researches and equations and wireless weather stations and sensors to determine the water requirements, provided with a fully controlled kiosk user interface, mobile application control, web interface, wired and wireless communication}
+		\smallentry{Robotic Arm}
+			{Graduation Project funded by the Ministry of Higher Education, a Solar Powered Robotic Arm to Identify and Collect Agricultural Products with 6 degrees of freedom, using machine learning and computer vision for identification and using air-powered manipulator to to collect the fruits.}
+		\smallentry{Zote ROV}
+			{Remotely Operated Underwater Vehicle with two manipulators and quadrable camera vision system. Designed, fabricated and programmed for MATE ROV competition 2020 and Underwater Sea Challenges 2020.}
+		\smallentry{\small{Backwash Controller}}
+			{Microcontroller based control unit for automizing the backwash process of drip irrigation gravel and sand filters by a user defined timing, differential pressure or a hybrid system.}
+		\smallentry{Komodo ROV}
+			{Remotely Operated Underwater Vehicle provided with several sensors, a manipulator and a triple camera vision system. Designed, fabricated and programmed for MATE ROV competition 2019 and UMVC competition 2019.}
+		\smallentry{Power Data Logger}
+			{Microcontroller drived device on a board for logging data of power, voltage and current using sensors, processing readings and storing it into an SD card.}
+
+
+	\section{Training and Certifications}
+		\entry{July 2021}
+			{CSWE: Certified SolidWorks Expert - Mechanical Design.}
+			{Dassault Systèmes}
+			{C-6NMDPAQ9UE}
+		\entry{July 2021}
+			{CSWPA-SU: Certified SolidWorks Professional - Advanced Surfacing.}
+			{Dassault Systèmes}
+			{C-KWE4RLF8MB}
+		\entry{June 2021}
+			{CSWPA-SM: Certified SolidWorks Professional - Advanced Sheet Metal.}
+			{Dassault Systèmes}
+			{C-AG8RJBFT5S}
+		\entry{April 2021}
+			{CSWPA-WD: Certified SolidWorks Professional - Advanced Weldments.}
+			{Dassault Systèmes}
+			{C-HUZLWBG3NX}
+		\entry{April 2021}
+			{CSWPA-DT: Certified SolidWorks Professional - Advanced Drawing Tools.}
+			{Dassault Systèmes}
+			{C-EFG2MLZRDV}
+		\entry{December 2020}
+			{CSWP: Certified SolidWorks Professional - Mechanical Design.}
+			{Dassault Systèmes}
+			{C-5QRD4ZWS9H}
+		\entry{July 2020}
+			{CSWA: Certified SolidWorks Associate - Mechanical Design.}
+			{Dassault Systèmes}
+			{C-39UJYLZ5MG}
+		\entry{November 2019}
+			{Entrepreneurship and Small Business Course (ESB) - 40Hr.}
+			{Career Development Center \& Entrepreneurship - CDCE and Certiport Egypt}
+			{}
+
+
+	\section{Volunteering}
+		\entry{2019-2020}
+			{Project Management Member}
+			{Enactus Alexandria University}
+			{International non-profit organization dedicated to achieve the UN's sustainable development goals.}
+		\entry{2019}
+			{Instructor}
+			{C and Arduino Course}
+			{Voluntary C language, Electronics and Arduino course organized by the Agricultural Engineering Department for students}
+
+
+\end{document}
