@@ -1,4 +1,3 @@
-% TODO: vertically center the left minipage
 \documentclass[a4paper]{article}
 
 %\usepackage{extsizes}
@@ -7,14 +6,24 @@
 \usepackage{indentfirst}  % indent first word of every paragraph
 \usepackage[none]{hyphenat}  % prevent hyphenation in the entire document by setting the hyphenation languages to none
 \usepackage[margin=1.25in]{geometry}
+\usepackage{hyperref}  % for hyerlinks
 
 \pagenumbering{gobble}  % no page numbering
 
 \renewcommand{\maketitle}{
 	\begin{center}
 		{\Huge\bfseries{\theauthor}}\\
-		\vspace{0.5em}
-		{\large Email: arsanysamuel.as@gmail.com \\ Phone number: +20-106-887-4670}
+			\vspace{0.5em}
+		{
+			\begin{center}
+				\large\begin{tabular}{l  l}
+					Email: & \href{mailto:arsanysamuel.as@gmail.com}{arsanysamuel.as@gmail.com}  \\ 
+					Phone: & +20-106-887-4670  \\
+					Linkedin: & \url{linkedin.com/in/arsany-samuel}  \\
+					Github: & \url{github.com/arsanysamuel}
+				\end{tabular}
+			\end{center}
+		}
 	\end{center}
 }
 
@@ -107,11 +116,11 @@
 
 
 	\section{Experience}
-		\entry{2021-present}
+		\entry{2021-2022}
 			{Technical/Site Mechatronics Engineer}
 			{Specialist Company for Engineering Solutions.}
 			{Programming machine vision applications, graphical user interfaces, database integration, network and serial communication.\\Mechanical, electronic circuits and board design.\\Preforming and supervising installations and maintenance of solar heaters on site.}
-		\entry{2019-2021}
+		\entry{2019-present}
 			{Co-Founder}
 			{Sibotics.}
 			{Co-Founded IOT and electronic design services startup company.}
@@ -164,34 +173,14 @@
 
 
 	\section{Training and Certifications}
+		\entry{September 2022}
+			{CS50x}
+			{Harvard University}
+			{}
 		\entry{July 2021}
 			{CSWE: Certified SolidWorks Expert - Mechanical Design.}
 			{Dassault Systèmes}
 			{C-6NMDPAQ9UE}
-		\entry{July 2021}
-			{CSWPA-SU: Certified SolidWorks Professional - Advanced Surfacing.}
-			{Dassault Systèmes}
-			{C-KWE4RLF8MB}
-		\entry{June 2021}
-			{CSWPA-SM: Certified SolidWorks Professional - Advanced Sheet Metal.}
-			{Dassault Systèmes}
-			{C-AG8RJBFT5S}
-		\entry{April 2021}
-			{CSWPA-WD: Certified SolidWorks Professional - Advanced Weldments.}
-			{Dassault Systèmes}
-			{C-HUZLWBG3NX}
-		\entry{April 2021}
-			{CSWPA-DT: Certified SolidWorks Professional - Advanced Drawing Tools.}
-			{Dassault Systèmes}
-			{C-EFG2MLZRDV}
-		\entry{December 2020}
-			{CSWP: Certified SolidWorks Professional - Mechanical Design.}
-			{Dassault Systèmes}
-			{C-5QRD4ZWS9H}
-		\entry{July 2020}
-			{CSWA: Certified SolidWorks Associate - Mechanical Design.}
-			{Dassault Systèmes}
-			{C-39UJYLZ5MG}
 		\entry{November 2019}
 			{Entrepreneurship and Small Business Course (ESB) - 40Hr.}
 			{Career Development Center \& Entrepreneurship - CDCE and Certiport Egypt}
