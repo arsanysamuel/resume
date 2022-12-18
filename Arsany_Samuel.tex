@@ -5,7 +5,7 @@
 \usepackage{titling}  % customize maketitle
 \usepackage{indentfirst}  % indent first word of every paragraph
 \usepackage[none]{hyphenat}  % prevent hyphenation in the entire document by setting the hyphenation languages to none
-\usepackage[margin=1.25in]{geometry}
+\usepackage[margin=0.55in]{geometry}
 \usepackage{hyperref}  % for hyerlinks
 
 \pagenumbering{gobble}  % no page numbering
@@ -63,38 +63,36 @@
 
 \newcommand{\entry}[4]{   % new command takes 4 args, will improve with xargs package to take optional arguments later
 	\begin{center}
-		\begin{minipage}[c]{0.25\linewidth}  % [t] is optional positioning argument, try h,b,t,p , using text width as it's a constant width
+		\begin{minipage}[c]{0.2\linewidth}  % [t] is optional positioning argument, try h,b,t,p , using text width as it's a constant width
 			\vfill
 			\hfill  % align to the right
 			\textsc{#1}  % small caps word, # for the argument number
 			\vfill
 		\end{minipage}
 		\hfill\vline\hfill  % vertical line in the center
-		\begin{minipage}[c]{0.7\linewidth}
+		\begin{minipage}[c]{0.75\linewidth}
 			\textrm{``#2''} \\
 			\textit{#3} \\
 			\footnotesize{#4}
 		\end{minipage}
 	\end{center}
-	%\vspace{0.5em} 
 }
 
 \newcommand{\smallentry}[2]{   % new command takes 2 args
 	\begin{center}
-		\begin{minipage}[c]{0.25\linewidth}  % [t] is optional positioning argument, try h,b,t,p , using text width as it's a constant width
+		\begin{minipage}[c]{0.2\linewidth}  % [t] is optional positioning argument, try h,b,t,p , using text width as it's a constant width
 			\vfill
 			\hfill  % align to the right
 			\textsc{#1}  % small caps word, # for the argument number
 			\vfill
 		\end{minipage}
 		\hfill\vline\hfill  % line in the center
-		\begin{minipage}[c]{0.7\linewidth}
+		\begin{minipage}[c]{0.75\linewidth}
 			\vfill
 			\textrm{#2} 
 			\vfill
 		\end{minipage}
 	\end{center}
-	\vspace{0.5em} 
 }
 
 \title{R\'esum\'e}
