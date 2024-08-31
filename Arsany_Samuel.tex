@@ -1,12 +1,16 @@
 \documentclass[a4paper]{article}
 
-%\usepackage{extsizes}
 \usepackage{titlesec}  % reformatting titles
 \usepackage{titling}  % customize maketitle
 \usepackage{indentfirst}  % indent first word of every paragraph
 \usepackage[none]{hyphenat}  % prevent hyphenation in the entire document by setting the hyphenation languages to none
 \usepackage[margin=0.55in]{geometry}
 \usepackage{hyperref}  % for hyerlinks
+\usepackage{enumitem}
+
+% ATS friendly resume
+\usepackage[T1]{fontenc}  % for font encoding
+\input{glyphtounicode}
 
 \pagenumbering{gobble}  % no page numbering
 
@@ -16,17 +20,23 @@
 			\vspace{0.5em}
 		{
 			\begin{center}
-				\large\begin{tabular}{l  l}
-					Email: & \href{mailto:arsanysamuel.as@gmail.com}{arsanysamuel.as@gmail.com}  \\ 
-					Phone: & +20-106-887-4670  \\
-					Linkedin: & \href{https://linkedin.com/in/arsanysamuel}{linkedin.com/in/arsanysamuel}  \\
-					Github: & \href{https://github.com/arsanysamuel}{github.com/arsanysamuel}
-				\end{tabular}
+                \begin{minipage}{0.4\linewidth}
+                    \large\begin{tabular}{l  l}
+                        \textbf{Email:} & \href{mailto:arsanysamuel.as@gmail.com}{arsanysamuel.as@gmail.com}  \\ 
+                        \textbf{Phone:} & +20-106-887-4670  \\
+                    \end{tabular}
+                \end{minipage}
+                \hspace{1em}
+                \begin{minipage}{0.4\linewidth}
+                    \large\begin{tabular}{l  l}
+                        \textbf{Linkedin:} & \href{https://linkedin.com/in/arsanysamuel}{linkedin.com/in/arsanysamuel}  \\
+                        \textbf{Github:} & \href{https://github.com/arsanysamuel}{github.com/arsanysamuel}
+                    \end{tabular}
+                \end{minipage}
 			\end{center}
 		}
 	\end{center}
 }
-
 
 \titleformat{\section}   % reformat title (titlesec)
 	{\huge\bfseries}  % formatting
@@ -37,7 +47,7 @@
 
 \titleformat{\subsection}
 	{\Large\bfseries}
-	{\hspace{-0.5em}$\bullet$}
+	{\hspace{0em}$\bullet$}
 	{0em}
 	{\hspace{0.25em}}
 
@@ -49,17 +59,10 @@
 	{}
 	[:]
 
-\titlespacing{\subsubsection}  % modify title spacint (titlesec)
+\titlespacing{\subsubsection}  % modify title spacing (titlesec)
 	{0em}  % right spacing
 	{0.25em}  % vertical spacing
 	{1em}  % left spacing
-
-% Pure laziness:
-\newcommand{\ag}{Agricultural Engineering}
-\newcommand{\aed}{Agricultural Engineering Department}
-\newcommand{\foa}{Faculty of Agriculture}
-\newcommand{\au}{Alexandria University}
-
 
 \newcommand{\entry}[4]{   % new command takes 4 args, will improve with xargs package to take optional arguments later
 	\begin{center}
@@ -95,108 +98,149 @@
 	\end{center}
 }
 
+\newcommand{\blist}[1]{  % custom bullet list
+    \vspace{-\topsep}
+    \renewcommand\labelitemi{\tiny$\bullet$}
+    \begin{itemize}[leftmargin=3.5mm, noitemsep]
+        #1
+    \end{itemize}
+}
+
 \title{R\'esum\'e}
 \author{Arsany Samuel}
 
 \begin{document}
+
 	\maketitle
-	
+
 
 	\section{Experience}
-		\entry{Jun 2021 - Mar 2022}
-			{Technical/Site Mechatronics Engineer}
-			{Specialist Company for Engineering Solutions.}
-			{Programming machine vision applications, graphical user interfaces, database integration, network and serial communication.\\Mechanical, electronic circuits and board design.\\Preforming and supervising installations and maintenance of solar heaters on site.}
-		%\entry{2019 - present}
-			%{Co-Founder}
-			%{Sibotics.}
-			%{Co-Founded IOT and electronic design services startup company.}
+        \entry{Mar 2023 - Present}
+            {Software Developer \& DevOps Engineer}
+            {Noury AG. (Switzerland - Remote)}
+            {
+                \blist{
+                    \item Contributed in Designing and implementing a robust backend application for the Noury’s mobile app using Django Rest Framework, ensuring seamless and scalable API integrations.
+                    \item Maintained and optimized infrastructure and deployment configurations, focusing on automation for CI/CD pipelines to streamline development and deployment processes.
+                    \item Created and customized an ERP solution using Frappe/ERPNext, integrating and synchronizing data with multiple third-party sources to enhance operational efficiency.
+                    \item Provided mentorship to interns and team members, offering guidance on best practices and technical skills to foster professional growth and ensure successful project delivery.
+                }
+            }
+        \entry{Jun 2021 - Mar 2022}
+            {Technical/Site Mechatronics Engineer}
+            {Specialist Company for Engineering Solutions. (Alexandria, Egypt)}
+            {
+                \blist{
+                    \item Developed machine vision applications and user-friendly GUIs 
+                    that integrates with SQL databases and other devices using network/serial communication.
+                    \item Designed mechanical and electronic circuits, including PCB layout.
+                }
+            }
 		\entry{Nov 2018 - Aug 2020}
-			{ROV Pilot, Electrical/Mechanical/Software Team Member.}
-			{Vortex Robotics.}
-			{Participated in several underwater robotics competitions with two academic teams.\\Electrical/Mechanical member and ROV pilot in 2019.\\Software team member in 2020.}
-		%\entry{2018 - present}  % don't add a blank line after entry
-			%{Co-Founder}
-			%{Comet.}
-			%{Co-Founded startup company providing electronic, mechanical and software solutions including design and fabrication services and project implementation, also competing in the market with innovative industrial solutions and products.}
-
-	\section{Education}
-		\entry{2016 - 2021}
-			{B.S.E. in \ag}
-			{\foa, \au }
-			{
-				Participated in many research projects and publications, along with several student activities and organizations.\\
-				Graduation Project: Solar powered robotic arm using image processing, machine vision and artificial intelligence to identify and collect agricultural products and fruits.
-			}
-
+			{Technical Academic Team Member.}
+			{Vortex Robotics. (Academic ROV Team)}
+            {
+                \blist{
+                    \item Participated in MATE ROV 2019 underwater robotics competition as an electrical/mechanical team member and ROV pilot.
+                    \item Participated in Underwater Robotics Challenges competition as a software team member.
+                }
+            }
 
 
 	\section{Skills}
-		\subsection{Software}
+        \subsection{Software}
 			\subsubsection{Programming Languages}
-			C, C++, Python, Javascript, SQL, Shell/Bash scripting.
-			\subsubsection{Frameworks}
-			OpenCV, Qt, Tensorflow, ORM(SQLAlchemy), Flask.
+			Python, Shell scripting, C, C++, Javascript, SQL.
+			\subsubsection{Frameworks and Tools}
+			Django, DRF, Docker, Kubernetes, Terraform, Helm, Bitbucket pipelines, GCP, Frappe, Git, Qt, OpenCV, Flask, Tensorflow.
 			\subsubsection{Markup Languages}
-			{\LaTeX}, HTML/CSS, Markdown.
-			\subsubsection{CAD Modeling}	
-			SolidWorks, Sketchup, AutoCAD.
-			\subsubsection{Electronics}	
-			EagleCAD, KiCAD, Proteus, NI Multisim.
+			Markdown, {\LaTeX}, HTML/CSS.
 			\subsubsection{Others}
-			Linux, Git, Command Line tools, Networking tools and configuration.
-		\subsection{Hardware}
-			\subsubsection{Electrical}
-			Electronics and electrical circuitry, microcontroller programming, SBCs, PCB fabrication.
-			\subsubsection{Mechanical}
-			Material selection, machining and fabrication processes, machine assembly, pneumatic and hydraulic circuits, sealing techniques.
+			Linux, EagleCAD, KiCAD, Circuit design, Microcontrollers, SolidWorks.
 
 		% might remove 
 		%\subsection{Languages}
 			%Arabic(Mother Tongue), English (Proficient).
 
 
-	\section{Projects}
-		%\smallentry{Battery Tester}
-			%{Commercial ready battery life tester for solar systems, cars and other applications acid and dry batteries.}
-		\smallentry{\footnotesize{Irrigation Controller}}
-			{Project Funded by the Ministry of Higher Education, a microprocessor and microcontroller based irrigation control system, using state-of-art irrigation researches and equations and acquired data from wireless weather stations and sensors to determine the watering requirements, equipped with a fully customizable kiosk user interface, mobile application control, web interface, wired and wireless communication methods}
-		\smallentry{Robotic Arm}
-			{Graduation Project funded by the Ministry of Higher Education, a Solar Powered Robotic Arm to Identify and Collect Agricultural Products with 6 degrees of freedom, using machine learning and computer vision for identification and using air-powered manipulator to to collect fruits and agricultural products.}
-		\smallentry{Zote ROV}
-			{Remotely Operated Underwater Vehicle with two manipulators and quad camera vision system. Designed, fabricated and programmed for MATE ROV competition 2020 and Underwater Sea Challenges 2020.}
-		\smallentry{\small{Backwash Controller}}
-			{Microcontroller based control unit for automatizing the backwash process of drip irrigation gravel and sand filters by a user defined timing, differential pressure or a hybrid system.}
-		\smallentry{Komodo ROV}
-			{Remotely Operated Underwater Vehicle provided with several sensors, a manipulator and a triple camera vision system. Designed, fabricated and programmed for MATE ROV competition 2019 and UMVC competition 2019.}
-		\smallentry{Power Data Logger}
-			{Microcontroller powered device on a board for logging data of power, voltage and current using sensors, processing readings and storing it into an SD card.}
+    \section{Projects}
+
+        \smallentry{\footnotesize{Noury Consumer App}}
+            {
+                \blist{
+                    \item Designed and developed a scalable backend REST API using Django Rest Framework to support Noury's consumer mobile application.
+                    \item Optimized CI/CD pipelines and automated deployment processes using Docker for containerization and Kubernetes for orchestration, enhancing release efficiency, scalability, and minimizing downtime.
+                    \item Implemented monitoring and logging strategies to maintain API performance and reliability.
+                }
+            }
+
+        \smallentry{\scriptsize{Noury Resource Planning}}
+            {
+                \blist{
+                    \item Engineered a customized ERP system using Frappe/ERPNext, designed to streamline internal operations and enhance business efficiency.
+                    \item Implemented advanced data synchronization techniques to integrate multiple third-party data sources and APIs, ensuring real-time updates and accurate information across systems.
+                    \item Customized ERP modules and workflows to meet specific business needs, including automated reporting and process automation to improve operational efficiency.
+                    \item Optimized system performance and scalability, adapting the ERP solution to support growing business demands and evolving requirements.
+                }
+            }
+
+        \smallentry{\footnotesize{Irrigation Controller}}
+            {
+                \blist{
+                    \item Engineered a microprocessor-based system with advanced algorithms, integrating data from wireless weather stations and sensors to optimize watering needs.
+                    \item Developed a customizable user interface, including kiosk, mobile app, and web portal, and implemented both wired and wireless communication methods.
+                    \item Integrated a computer vision application to monitor field images, track irrigation processes, and maintain plant health, improving overall system efficiency.
+                }
+            }
+
+        \smallentry{Robotic Arm}
+            {
+                \blist{
+                    \item Engineered and manufactured a robotic arm with 6 degrees of freedom for automated agricultural product collection, equipped with an pneumatic powered manipulator and integrated system components to enhance efficiency in harvesting operations.
+                    \item Implemented machine learning and computer vision to accurately identify and differentiate fruits and drive the arm to collect them.
+                }
+            }
+
+        \smallentry{Vortex ROV}
+            {
+                \blist{
+                    \item Contributed in the design and fabrication of a remotely operated underwater vehicle featuring two manipulators and a quad camera vision system.
+                    \item Programmed the ROV for advanced control and operation for the MATE ROV Competition 2019 and Underwater Sea Challenges 2020.
+                    \item Integrated the vehicle's components to ensure effective performance in harsh underwater environments.
+                }
+            }
+
+        \smallentry{\small{Backwash Controller}}
+            {
+                \blist{
+                    \item Created a microcontroller-based system to automate the backwash process of drip irrigation system filters.
+                    \item Designed the unit for operation based on user-defined timing, differential pressure sensing, or a hybrid program.
+                }
+}
 
 
 	\section{Training and Certifications}
+
+		\entry{March 2023}
+			{Thinking and Creating with Code}
+			{EPFL Extension School}
+			{\url{learn.extensionschool.ch/verify/VqOzbOAyD9pl}}
+
 		\entry{September 2022}
 			{CS50x}
 			{Harvard University}
 			{\url{certificates.cs50.io/fe015e39-3d8e-48ad-a13b-4177ec41e108.pdf}}
+
 		\entry{July 2021}
 			{CSWE: Certified SolidWorks Expert - Mechanical Design.}
 			{Dassault Systèmes}
 			{C-6NMDPAQ9UE}
-		\entry{November 2019}
-			{Entrepreneurship and Small Business Course (ESB) - 40Hr.}
-			{Career Development Center \& Entrepreneurship - CDCE and Certiport Egypt}
-			{}
 
 
-	%\section{Volunteering}
-		%\entry{2019-2020}
-			%{Project Management Member}
-			%{Enactus Alexandria University}
-			%{International non-profit organization dedicated to achieve the UN's sustainable development goals.}
-		%\entry{2019}
-			%{Instructor}
-			%{C and Arduino Course}
-			%{Voluntary C language, Electronics and Arduino course organized by the Agricultural Engineering Department for students}
+	\section{Education}
+		\entry{2016 - 2021}
+			{B.S.E. in Agricultural Engineering}
+			{Faculty of Agriculture, Alexandria University }
 
 
 \end{document}
