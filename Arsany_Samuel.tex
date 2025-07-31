@@ -23,7 +23,7 @@
                 \begin{minipage}{0.4\linewidth}
                     \large\begin{tabular}{l  l}
                         \textbf{Email:} & \href{mailto:arsanysamuel.as@gmail.com}{arsanysamuel.as@gmail.com}  \\ 
-                        \textbf{Phone:} & +20-106-887-4670  \\
+                        \textbf{Phone:} & \href{tel:+201068874670}{+20 106 887 4670}  \\
                     \end{tabular}
                 \end{minipage}
                 \hspace{1em}
@@ -106,24 +106,34 @@
     \end{itemize}
 }
 
+\newcommand{\sitem}[1]{  % custom subitem
+    {\setlength\itemindent{15pt} \item[\textopenbullet] #1}
+}
+
 \title{R\'esum\'e}
 \author{Arsany Samuel}
 
 \begin{document}
-
 	\maketitle
-
 
 	\section{Experience}
         \entry{Mar 2023 - Present}
-            {Software Developer \& DevOps Engineer}
+            {DevOps Engineer / Software Developer}
             {Noury AG. (Switzerland - Remote)}
             {
                 \blist{
-                    \item Contributed in Designing and implementing a robust backend application for the Noury’s mobile app using Django Rest Framework, ensuring seamless and scalable API integrations.
-                    \item Maintained and optimized infrastructure and deployment configurations, focusing on automation for CI/CD pipelines to streamline development and deployment processes.
-                    \item Created and customized an ERP solution using Frappe/ERPNext, integrating and synchronizing data with multiple third-party sources to enhance operational efficiency.
-                    \item Provided mentorship to interns and team members, offering guidance on best practices and technical skills to foster professional growth and ensure successful project delivery.
+                    \item \textbf{DevOps Engineer (Jul 2023 - Present)}
+                        \sitem{Developed CI/CD pipelines for multiple project types, ensuring fast and reliable deployments.}
+                        \sitem{Containerized applications with Docker and managed deployments using Kubernetes and Helm.}
+                        \sitem{Architected and managed cloud infrastructure on GCP using IaC, with focus on security, access control, and cost optimization.}
+                        \sitem{Implemented observability and monitoring systems to ensure service health and performance.}
+                        \sitem{Oversaw version control, integrations, and development process to enable scalable collaboration.}
+                        \sitem{Improved developer experience by streamlining tools, workflows, and environment setup.}
+                    \\
+                    \item \textbf{Software Developer (Mar 2023 - Jun 2025)}
+                        \sitem{Contributed in Designing and implementing a robust backend application for the Noury’s mobile app using Django Rest Framework, ensuring seamless and scalable API integrations.}
+                        \sitem{Created and customized an ERP solution using Frappe/ERPNext, integrating and synchronizing data with multiple third-party sources to enhance operational efficiency.}
+                        \sitem{Provided mentorship to interns and team members, offering guidance on best practices and technical skills to foster professional growth and ensure successful project delivery.}
                 }
             }
         \entry{Jun 2021 - Mar 2022}
@@ -146,25 +156,24 @@
                 }
             }
 
-
 	\section{Skills}
         \subsection{Software}
 			\subsubsection{Programming Languages}
-			Python, Shell scripting, C, C++, Javascript, SQL.
-			\subsubsection{Frameworks and Tools}
-			Django, DRF, Docker, Kubernetes, Terraform, Helm, Bitbucket pipelines, GCP, Frappe, Git, Qt, OpenCV, Flask, Tensorflow.
+			Python, Bash/Shell scripting, C, C++, Javascript, SQL.
+            \subsubsection{DevOps \& Cloud Tools}
+            Docker, Kubernetes, Terraform, Helm, GitHub Actions, Bitbucket Pipelines, GCP, Linux
+            \subsubsection{Development Frameworks}
+            Django, DRF, Flask, Frappe/ERPNext, Qt, OpenCV
 			\subsubsection{Markup Languages}
 			Markdown, {\LaTeX}, HTML/CSS.
-			\subsubsection{Others}
-			Linux, EagleCAD, KiCAD, Circuit design, Microcontrollers, SolidWorks.
+			\subsubsection{Other Tools}
+			Git, EagleCAD, KiCAD, Circuit design, Microcontrollers, SolidWorks.
 
 		% might remove 
 		%\subsection{Languages}
 			%Arabic(Mother Tongue), English (Proficient).
 
-
     \section{Projects}
-
         \smallentry{\footnotesize{Noury Consumer App}}
             {
                 \blist{
@@ -173,7 +182,6 @@
                     \item Implemented monitoring and logging strategies to maintain API performance and reliability.
                 }
             }
-
         \smallentry{\scriptsize{Noury Resource Planning}}
             {
                 \blist{
@@ -183,7 +191,6 @@
                     \item Optimized system performance and scalability, adapting the ERP solution to support growing business demands and evolving requirements.
                 }
             }
-
         \smallentry{\footnotesize{Irrigation Controller}}
             {
                 \blist{
@@ -192,7 +199,6 @@
                     \item Integrated a computer vision application to monitor field images, track irrigation processes, and maintain plant health, improving overall system efficiency.
                 }
             }
-
         \smallentry{Robotic Arm}
             {
                 \blist{
@@ -200,7 +206,6 @@
                     \item Implemented machine learning and computer vision to accurately identify and differentiate fruits and drive the arm to collect them.
                 }
             }
-
         \smallentry{Vortex ROV}
             {
                 \blist{
@@ -209,38 +214,39 @@
                     \item Integrated the vehicle's components to ensure effective performance in harsh underwater environments.
                 }
             }
-
         \smallentry{\small{Backwash Controller}}
             {
                 \blist{
                     \item Created a microcontroller-based system to automate the backwash process of drip irrigation system filters.
                     \item Designed the unit for operation based on user-defined timing, differential pressure sensing, or a hybrid program.
                 }
-}
-
+            }
 
 	\section{Training and Certifications}
-
+		\entry{June 2025}
+			{Associate Cloud Engineer}
+			{Google}
+			{\url{credly.com/badges/515940bf-b2cd-4879-9306-2c6c4f411098/public_url}}
+		\entry{April 2023}
+			{Agile Explorer}
+			{IBM}
+			{\url{credly.com/badges/7b1b3f1f-edc3-4ffd-9328-7c55b4078b57/public_url}}
 		\entry{March 2023}
 			{Thinking and Creating with Code}
 			{EPFL Extension School}
 			{\url{learn.extensionschool.ch/verify/VqOzbOAyD9pl}}
-
 		\entry{September 2022}
 			{CS50x}
 			{Harvard University}
 			{\url{certificates.cs50.io/fe015e39-3d8e-48ad-a13b-4177ec41e108.pdf}}
-
 		\entry{July 2021}
 			{CSWE: Certified SolidWorks Expert - Mechanical Design.}
 			{Dassault Systèmes}
 			{C-6NMDPAQ9UE}
 
-
 	\section{Education}
 		\entry{2016 - 2021}
 			{B.S.E. in Agricultural Engineering}
 			{Faculty of Agriculture, Alexandria University }
-
 
 \end{document}
