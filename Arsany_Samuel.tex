@@ -106,8 +106,12 @@
     \end{itemize}
 }
 
-\newcommand{\sitem}[1]{  % custom subitem
-    {\setlength\itemindent{15pt} \item[\textopenbullet] #1}
+\newcommand{\sblist}[1]{  % custom bullet sublist
+    \vspace{-\topsep}
+    \renewcommand\labelitemii{\textopenbullet}
+    \begin{itemize}[leftmargin=5mm, noitemsep]
+        #1
+    \end{itemize}
 }
 
 \title{R\'esum\'e}
@@ -118,22 +122,39 @@
 
 	\section{Experience}
         \entry{Mar 2023 - Present}
-            {DevOps Engineer / Software Developer}
-            {Noury AG. (Switzerland - Remote)}
+            {DevOps Engineer}
+            {\href{https://www.noury.ch/}{Noury AG.} (Switzerland - Remote)}
             {
                 \blist{
                     \item \textbf{DevOps Engineer (Jul 2023 - Present)}
-                        \sitem{Developed CI/CD pipelines for multiple project types, ensuring fast and reliable deployments.}
-                        \sitem{Containerized applications with Docker and managed deployments using Kubernetes and Helm.}
-                        \sitem{Architected and managed cloud infrastructure on GCP using IaC, with focus on security, access control, and cost optimization.}
-                        \sitem{Implemented observability and monitoring systems to ensure service health and performance.}
-                        \sitem{Oversaw version control, integrations, and development process to enable scalable collaboration.}
-                        \sitem{Improved developer experience by streamlining tools, workflows, and environment setup.}
-                    \\
-                    \item \textbf{Software Developer (Mar 2023 - Jun 2025)}
-                        \sitem{Contributed in Designing and implementing a robust backend application for the Noury’s mobile app using Django Rest Framework, ensuring seamless and scalable API integrations.}
-                        \sitem{Created and customized an ERP solution using Frappe/ERPNext, integrating and synchronizing data with multiple third-party sources to enhance operational efficiency.}
-                        \sitem{Provided mentorship to interns and team members, offering guidance on best practices and technical skills to foster professional growth and ensure successful project delivery.}
+                    \sblist{
+                        \item{Developed CI/CD pipelines for multiple project types, ensuring fast and reliable deployments.}
+                        \item{Containerized applications with Docker and managed deployments using Kubernetes and Helm.}
+                        \item{Architected and managed cloud infrastructure on GCP using IaC, with focus on security, access control, and cost optimization.}
+                        \item{Implemented observability and monitoring systems to ensure service health and performance.}
+                        \item{Oversaw version control, integrations, and development process to enable scalable collaboration.}
+                        \item{Improved developer experience by streamlining tools, workflows, and environment setup.}
+                    }
+                    \item \textbf{Software Developer / DevOps Engineer (Mar 2023 - Jun 2025)}
+                    \sblist{
+                        \item{Contributed in Designing and implementing a robust backend application for the Noury’s mobile app using Django Rest Framework,
+                            ensuring seamless and scalable API integrations.}
+                        \item{Created and customized an ERP solution using Frappe/ERPNext,
+                            integrating and synchronizing data with multiple third-party sources to enhance operational efficiency.}
+                        \item{Provided mentorship to interns and team members,
+                            offering guidance on best practices and technical skills to foster professional growth and ensure successful project delivery.}
+                    }
+                }
+            }
+        \entry{Nov 2024 - May 2025}
+            {Software Developer / DevOps Engineer}
+            {\href{https://ur-store.ch/}{Ur-Store Systems AG.} (Switzerland - Contract)}
+            {
+                \blist{
+                    \item Led the backend team and contributed to the implementation of an API backend and ERP system for a reliable,
+                        modular platform for unattended retail
+                    \item Built a cloud infrastructure on GCP using IaC, CI/CD, containerization and orchestration config for the whole system
+                    \item Launched 3 successful client projects (unmanned stores) on new platform in first 6 months
                 }
             }
         \entry{Jun 2021 - Mar 2022}
@@ -142,32 +163,23 @@
             {
                 \blist{
                     \item Developed machine vision applications and user-friendly GUIs 
-                    that integrates with SQL databases and other devices using network/serial communication.
+                        that integrates with SQL databases and other devices using network/serial communication.
                     \item Designed mechanical and electronic circuits, including PCB layout.
-                }
-            }
-		\entry{Nov 2018 - Aug 2020}
-			{Technical Academic Team Member.}
-			{Vortex Robotics. (Academic ROV Team)}
-            {
-                \blist{
-                    \item Participated in MATE ROV 2019 underwater robotics competition as an electrical/mechanical team member and ROV pilot.
-                    \item Participated in Underwater Robotics Challenges competition as a software team member.
                 }
             }
 
 	\section{Skills}
         \subsection{Software}
 			\subsubsection{Programming Languages}
-			Python, Bash/Shell scripting, C, C++, Javascript, SQL.
+			Python, Bash/Shell scripting, C, C++, Javascript, SQL
             \subsubsection{DevOps \& Cloud Tools}
-            Docker, Kubernetes, Terraform, Helm, GitHub Actions, Bitbucket Pipelines, GCP, Linux
+            Linux, Git, Docker, Kubernetes, Terraform, Helm, GitHub Actions, Bitbucket Pipelines, GCP, AWS
             \subsubsection{Development Frameworks}
             Django, DRF, Flask, Frappe/ERPNext, Qt, OpenCV
 			\subsubsection{Markup Languages}
 			Markdown, {\LaTeX}, HTML/CSS.
 			\subsubsection{Other Tools}
-			Git, EagleCAD, KiCAD, Circuit design, Microcontrollers, SolidWorks.
+			EagleCAD, KiCAD, Circuit design, Microcontrollers, SolidWorks
 
 		% might remove 
 		%\subsection{Languages}
@@ -178,7 +190,8 @@
             {
                 \blist{
                     \item Designed and developed a scalable backend REST API using Django Rest Framework to support Noury's consumer mobile application.
-                    \item Optimized CI/CD pipelines and automated deployment processes using Docker for containerization and Kubernetes for orchestration, enhancing release efficiency, scalability, and minimizing downtime.
+                    \item Optimized CI/CD pipelines and automated deployment processes using Docker for containerization and Kubernetes for orchestration,
+                        enhancing release efficiency, scalability, and minimizing downtime.
                     \item Implemented monitoring and logging strategies to maintain API performance and reliability.
                 }
             }
@@ -186,23 +199,39 @@
             {
                 \blist{
                     \item Engineered a customized ERP system using Frappe/ERPNext, designed to streamline internal operations and enhance business efficiency.
-                    \item Implemented advanced data synchronization techniques to integrate multiple third-party data sources and APIs, ensuring real-time updates and accurate information across systems.
-                    \item Customized ERP modules and workflows to meet specific business needs, including automated reporting and process automation to improve operational efficiency.
+                    \item Implemented advanced data synchronization techniques to integrate multiple third-party data sources and APIs,
+                        ensuring real-time updates and accurate information across systems.
+                    \item Customized ERP modules and workflows to meet specific business needs,
+                        including automated reporting and process automation to improve operational efficiency.
                     \item Optimized system performance and scalability, adapting the ERP solution to support growing business demands and evolving requirements.
+                }
+            }
+
+        \smallentry{Ur-Store Platform}
+            {
+                \blist{
+                    \item Led the backend team and contributed to the implementation of an API backend and ERP system for a reliable,
+                        modular platform for unattended retail.
+                    \item Built a cloud infrastructure on GCP using IaC, CI/CD, containerization and orchestration config for the whole system.
+                    \item Launched 3 successful client projects (unmanned stores) on new platform in first 6 months.
                 }
             }
         \smallentry{\footnotesize{Irrigation Controller}}
             {
                 \blist{
-                    \item Engineered a microprocessor-based system with advanced algorithms, integrating data from wireless weather stations and sensors to optimize watering needs.
-                    \item Developed a customizable user interface, including kiosk, mobile app, and web portal, and implemented both wired and wireless communication methods.
-                    \item Integrated a computer vision application to monitor field images, track irrigation processes, and maintain plant health, improving overall system efficiency.
+                    \item Engineered a microprocessor-based system with advanced algorithms,
+                        integrating data from wireless weather stations and sensors to optimize watering needs.
+                    \item Developed a customizable user interface, including kiosk, mobile app, and web portal,
+                        and implemented both wired and wireless communication methods.
+                    \item Integrated a computer vision application to monitor field images, track irrigation processes,
+                        and maintain plant health, improving overall system efficiency.
                 }
             }
         \smallentry{Robotic Arm}
             {
                 \blist{
-                    \item Engineered and manufactured a robotic arm with 6 degrees of freedom for automated agricultural product collection, equipped with an pneumatic powered manipulator and integrated system components to enhance efficiency in harvesting operations.
+                    \item Engineered and manufactured a robotic arm with 6 degrees of freedom for automated agricultural product collection,
+                        equipped with an pneumatic powered manipulator and integrated system components to enhance efficiency in harvesting operations.
                     \item Implemented machine learning and computer vision to accurately identify and differentiate fruits and drive the arm to collect them.
                 }
             }
@@ -212,13 +241,6 @@
                     \item Contributed in the design and fabrication of a remotely operated underwater vehicle featuring two manipulators and a quad camera vision system.
                     \item Programmed the ROV for advanced control and operation for the MATE ROV Competition 2019 and Underwater Sea Challenges 2020.
                     \item Integrated the vehicle's components to ensure effective performance in harsh underwater environments.
-                }
-            }
-        \smallentry{\small{Backwash Controller}}
-            {
-                \blist{
-                    \item Created a microcontroller-based system to automate the backwash process of drip irrigation system filters.
-                    \item Designed the unit for operation based on user-defined timing, differential pressure sensing, or a hybrid program.
                 }
             }
 
