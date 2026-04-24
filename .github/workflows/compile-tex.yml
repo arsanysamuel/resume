@@ -1,0 +1,21 @@
+name: Compile LaTeX resume to PDF
+on:
+  push:
+    brances: 
+      - "main"
+jobs:
+  compile-tex-to-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to repo
+        uses: actions/checkout@v4
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: Arsany_Samuel.tex
+      - name: Upload PDF file to repo
+        uses: actions/upload-artifact@v6
+        with:
+          path: Arsany_Samuel.pdf
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
