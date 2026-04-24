@@ -23,13 +23,17 @@ jobs:
     steps:
       - name: Checkout to repo
         uses: actions/checkout@v4
+      - name: Create dist directory
+        run: |
+          mkdir dist
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v4
         with:
           root_file: Arsany_Samuel.tex
+          args: "-output-directory=dist"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: Arsany_Samuel.pdf
+          path: "./dist"
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
