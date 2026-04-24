@@ -30,6 +30,7 @@ jobs:
         uses: xu-cheng/latex-action@v4
         with:
           root_file: Arsany_Samuel.tex
+          compiler: pdflatex
           args: "-output-directory=dist"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
