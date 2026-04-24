@@ -27,12 +27,9 @@ jobs:
         uses: xu-cheng/latex-action@v4
         with:
           root_file: Arsany_Samuel.tex
-      - name: Commit PDF file to repo
-        run: |
-          git config --local user.name "GitHub Action"
-          git config --local user.email "action@github.com"
-          git add Arsany_Samuel.pdf
-          git commit -m "Add PDF compiled file"
-          git push
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: Arsany_Samuel.pdf
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
